@@ -1,0 +1,112 @@
+1.Biến (phân biệt hoa thường)
+    bắt đầu bằng $
+    sau đó là chữ hoặc _
+    không bắt đầu bằng số
+
+    define('__HANGSO__',20);
+    ? : giống if else
+    ?? nếu tồn tại
+
+    var_dump() :biến trả về và kiểu dữ liệu
+    isset là dùng để kiểm tra xem biến đã đc khai báo chưa T/F
+    empty là dùng để kiểm tra có dữ liệu k nếu không thì T và ngược lại
+2.Mảng
+- $arr = array('1') //khởi tạo
+- array_push($mang,'phần tử 4');
+- $mang_3 =array_merge($mang,$arr);
+- count ($mang);
+- in_array kiểm tra 1 phần tử có trong mẩng k
+- array_key_exists('key1',$mang2) kiểm tra 1 key có trong mảng k.
+- array_slice($mang, 1) cắt phần tử
+
+3.Hàm
+a.Tham trị(giá trị gốc k thay đổi sau khi qua hàm)
+$du_lieu_goc = 5;
+function ham_tham_tri($tham_tri){
+    $tham_tri++;
+    echo $tham_tri;
+}
+ham_tham_tri(%du_lieu_goc);
+echo $du_lieu_goc
+
+b.Tham chiếu( thêm & tham chiếu sau qua hàm thì thay đổi dữ liệu gốc)
+function ham_tham_tri(&$tham_chieu){
+    $tham_chieu++;
+    echo $tham_chieu;
+}
+ham_tham_tri(%du_lieu_goc);
+echo $du_lieu_goc
+
+c.Các viết hàm
+$ham_ano= function(){
+    echo'Hàm ano';
+};
+$ham_ano();
+
+// mảng hàm
+$so=10;
+$arr-func =[
+'func1'=> function(){
+    echo 'Hàm 1';
+},
+'func2'=> function($tham_so=1){
+    tham_so++;
+    echo 'Hàm 2'.$tham_so;
+},
+'func3'=> function(&$tham_so = 1){
+    tham_so++;
+    echo 'Hàm 3'.$tham_so;
+},
+];
+$arr_func['func1']();
+$arr_func['func2']($so);
+$arr_func['func2']($so);
+
+//callback
+- array_walk($mang ,function($value,$key){
+    echo 'Phần tử thứ'.$key.'có giá trị là'.$value;
+})
+
+//closure bao đóng
+$message="Đây là thông báo";
+function goi_thong_bao($message){
+    echo $message;
+}
+goi_thong_bao();
+
+//cach 2
+$in_thong_bao=function () use ($message){
+    echo $message;
+}
+$in_thong_bao();
+
+4.OOP
+- trừu tượng
+- đóng gói
+- kế thừa
+- đa hình
+
+-quyền truy cập
+
+5.self and $this
+
+- self chính lớp này
+- $this chính đối tượng này 
+
+
+6. Chuỗi
+- explode(kí tự cắt,tên chuỗi,số lượng chuỗi cắt)
+- implode(kí tự ghép,tên chuỗi)
+- str_split(chuỗi);
+- str_replace(từ thay thế, từ bị thay thế,chuỗi)
+- str_repeat(chuỗi,số lần lặp)
+- substr(chuỗi,cắt từ vị trí)
+- strstr (chuỗi,chuỗi bất đầu)
+- strpos (chuỗi,từ cần tìm vị trí,bắt đầu từ vị trí)
+- strlen
+- trim
+- md5(chuỗi) mã hóa
+- htmlentities(chuỗi)
+- html_entity_decode(chuỗi)
+- htmlspecialchars
+- json_encode
